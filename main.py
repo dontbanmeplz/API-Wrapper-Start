@@ -22,7 +22,7 @@ class Client():
         self.loop.run_until_complete(self.start())
     def login(self, token):
         headers = {"Authorization": f"Bot {token}"}
-        r = json.loads(requests.get(f"{apib}/users/@me", headers = headers).text)
+        r = json.loads(requests.get(f"{apib}/users/@me", headers = headers)).text
         print(r)
         try:
             r["message"]
